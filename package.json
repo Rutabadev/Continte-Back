@@ -6,7 +6,7 @@
   "scripts": {
     "prestart": "start mongod --dbpath \"D:\\Program Files\\MongoDB\\data\"",
     "start": "nodemon server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"    
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
     "RESTful",
@@ -19,8 +19,8 @@
     "nodemon": "^1.12.1"
   },
   "dependencies": {
-    "concurrently": "^3.5.1",
     "express": "^4.16.2",
-    "mongoose": "^4.13.0"
+    "mongoose": "^4.13.0",
+    "mongoose-auto-increment": "^5.0.1"
   }
 }
