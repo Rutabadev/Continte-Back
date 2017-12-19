@@ -4,8 +4,9 @@
   "description": "RESTful todoApi",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon server.js"
+    "prestart": "start mongod --dbpath \"D:\\Program Files\\MongoDB\\data\"",
+    "start": "nodemon server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"    
   },
   "keywords": [
     "RESTful",
@@ -18,6 +19,7 @@
     "nodemon": "^1.12.1"
   },
   "dependencies": {
+    "concurrently": "^3.5.1",
     "express": "^4.16.2",
     "mongoose": "^4.13.0"
   }
