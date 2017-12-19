@@ -4,9 +4,10 @@
   "description": "RESTful todoApi",
   "main": "index.js",
   "scripts": {
-    "prestart": "start mongod --dbpath \"D:\\Program Files\\MongoDB\\data\"",
+    "prestart": "start mongod --dbpath data",
     "start": "nodemon server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "install": "if not exist data1 mkdir data1"
   },
   "keywords": [
     "RESTful",
