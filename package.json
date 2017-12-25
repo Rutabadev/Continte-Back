@@ -17,6 +17,7 @@
   "author": "Rutabadev",
   "license": "ISC",
   "devDependencies": {
+    "jshint": "^2.9.5",
     "nodemon": "^1.12.1"
   },
   "dependencies": {
