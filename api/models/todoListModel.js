@@ -2,7 +2,7 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 var autoIncrement = require('mongoose-auto-increment');
 
-var connection = mongoose.createConnection("mongodb://localhost/Tododb");
+var connection = mongoose.createConnection("mongodb://gilles:poitou@ds239127.mlab.com:39127/tasks");
 autoIncrement.initialize(connection);
 
 var TaskSchema = new Schema({
