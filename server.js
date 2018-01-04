@@ -11,7 +11,7 @@ mongoose.Promise = global.Promise;
 var options = {
     useMongoClient: true
 };
-mongoose.connect(MONGODB_URI, options);
+mongoose.connect('mongodb://heroku_z6d1bkjt:vp1d72shion1hfe2mb54hf8459@ds135817.mlab.com:35817/heroku_z6d1bkjt', options);
 
 app.use(bodyParser.urlencoded({ extended: true}));
 app.use(bodyParser.json());
