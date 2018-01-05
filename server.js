@@ -13,14 +13,22 @@ var options = {
 };
 mongoose.connect('mongodb://gilles:poitou@ds239127.mlab.com:39127/tasks', options);
 
-app.use(bodyParser.urlencoded({ extended: true}));
+app.use(bodyParser.urlencoded({
+    extended: true
+}));
 app.use(bodyParser.json());
 
 // Enable CORS (Cross-origin resource sharing)
 // for allowing requests from other ports
 app.use((req, res, next) => {
     res.append('Access-Control-Allow-Origin', ['*']);
-    next();
+    res.append('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,PATCH,OPTIONS');
+    res.append('Access-Control-Allow-Headers', 'Content-Type, Authorization, Content-Length, X-Requested-With'); //Add other headers used in your requests
+    if ('OPTIONS' == req.method) {
+        res.sendStatus(200);
+    } else {
+        next();
+    }
 });
 
 var routes = require('./api/routes/todoListRoutes');
