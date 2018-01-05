@@ -6,7 +6,7 @@
   "scripts": {
     "start": "start mongod --dbpath data && nodemon server.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "install": "if not exist data mkdir data"
+    "dev-install": "npm install && if not exist data mkdir data"
   },
   "keywords": [
     "RESTful",
