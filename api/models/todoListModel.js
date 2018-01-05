@@ -1,9 +1,14 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 var autoIncrement = require('mongoose-auto-increment');
+var env = process.env.NODE_ENV || 'development';
 
-// Deploy URI
-var connection = mongoose.createConnection('mongodb://gilles:poitou@ds239127.mlab.com:39127/tododb');
+if (env === 'development') {
+    var connection = mongoose.createConnection('mongodb://localhost/Tododb');
+} else {
+    // Prod URI
+    var connection = mongoose.createConnection('mongodb://gilles:poitou@ds239127.mlab.com:39127/tododb');
+}
 
 // var connection = mongoose.createConnection("mongodb://localhost/Tododb");
 autoIncrement.initialize(connection);

@@ -1,5 +1,6 @@
 var express = require('express'),
     app = express(),
+    env = process.env.NODE_ENV || 'development',
     port = process.env.PORT || 3000,
     mongoose = require('mongoose'),
     Task = require('./api/models/todoListModel'),
@@ -11,10 +12,16 @@ mongoose.Promise = global.Promise;
 var options = {
     useMongoClient: true
 };
-// mongoose.connect('mongodb://localhost/Tododb', options);
 
-// Deploy URI
-mongoose.connect('mongodb://gilles:poitou@ds239127.mlab.com:39127/tododb', options);
+if (env === 'development') {
+    // Dev URI
+    mongoose.connect('mongodb://localhost/Tododb', options);
+} else {
+    // Prod URI
+    mongoose.connect('mongodb://gilles:poitou@ds239127.mlab.com:39127/tododb', options);
+}
+
+
 
 app.use(bodyParser.urlencoded({
     extended: true
