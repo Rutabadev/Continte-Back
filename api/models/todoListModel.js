@@ -3,7 +3,7 @@ var Schema = mongoose.Schema;
 var autoIncrement = require('mongoose-auto-increment');
 
 // Deploy URI
-var connection = mongoose.createConnection('mongodb://gilles:poitou@ds239127.mlab.com:39127/tododb', options);
+var connection = mongoose.createConnection('mongodb://gilles:poitou@ds239127.mlab.com:39127/tododb');
 
 // var connection = mongoose.createConnection("mongodb://localhost/Tododb");
 autoIncrement.initialize(connection);
