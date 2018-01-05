@@ -11,7 +11,7 @@ mongoose.Promise = global.Promise;
 var options = {
     useMongoClient: true
 };
-mongoose.connect(MONGODB_URI, options);
+mongoose.connect('mongodb://localhost/Tododb', options);
 
 app.use(bodyParser.urlencoded({ extended: true}));
 app.use(bodyParser.json());
