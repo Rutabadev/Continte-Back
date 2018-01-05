@@ -11,10 +11,10 @@ mongoose.Promise = global.Promise;
 var options = {
     useMongoClient: true
 };
-mongoose.connect('mongodb://localhost/Tododb', options);
+// mongoose.connect('mongodb://localhost/Tododb', options);
 
 // Deploy URI
-// mongoose.connect('mongodb://gilles:poitou@ds239127.mlab.com:39127/tododb', options);
+mongoose.connect('mongodb://gilles:poitou@ds239127.mlab.com:39127/tododb', options);
 
 app.use(bodyParser.urlencoded({
     extended: true
